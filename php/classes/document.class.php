@@ -1,6 +1,6 @@
 <?php
   class Document{
-    private $id, $theme, $type, $auteur, $annee, $universite_id, $filiere_id, $admin_id;
+    private $id, $theme, $type, $auteur, $annee, $universite_id, $filiere_id, $admin_id, $contenu;
     public function __construct(){}
 
     public function getId(){return $this->id;}
@@ -11,6 +11,7 @@
     public function getUniversite_id(){return $this->universite_id;}
     public function getFiliere_id(){return $this->filiere_id;}
     public function getAdmin_id(){return $this->admin_id;}
+    public function getContenu(){return $this->contenu;}
 
     public function setId($i){$this->id=$i;}
     public function setTheme($i){$this->theme=$i;}
@@ -20,6 +21,7 @@
     public function setUniversite_id($i){$this->universite_id=$i;}
     public function setFiliere_id($i){$this->filiere_id=$i;}
     public function setAdmin_id($i){$this->admin_id=$i;}
+    public function setContenu($i){$this->contenu=$i;}
 
     public function hydrate(array $d){
 		  foreach($d as $key => $value){
@@ -31,7 +33,7 @@
   	}
 
     public function create($bdd){
-      $req=$bdd->prepare('INSERT INTO document(theme, type, auteur, annee, filiere_id, universite_id, admin_id) VALUES(:theme, :type, :auteur, :annee, :filiere_id, :universite_id, :admin_id)');
+      $req=$bdd->prepare('INSERT INTO document(theme, type, auteur, annee, filiere_id, universite_id, admin_id, contenu) VALUES(:theme, :type, :auteur, :annee, :filiere_id, :universite_id, :admin_id, :contenu)');
       $req->execute(array(
         ':theme'=>$this->getTheme(),
         ':type'=>$this->getType(),
@@ -39,7 +41,8 @@
         ':annee'=>$this->getAnnee(),
         ':universite_id'=>$this->getUniiversite_id(),
         ':filiere_id'=>$this->getFiliere_id(),
-        ':admin_id'=>$this->getAdmin_id()
+        ':admin_id'=>$this->getAdmin_id(),
+        ':contenu'=>$this->getContenu()
       ));
     }
 

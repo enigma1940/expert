@@ -10,9 +10,8 @@ $('.connForm').submit(function(e){
         password: $('.userPass').val()
       },
       function(data){
-        alert(data);
         if(data=='success'){
-          
+          document.location.href='connexion.php';
         }
         else $('.connErr').toggle('bounce');
       }
