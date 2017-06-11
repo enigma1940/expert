@@ -39,3 +39,7 @@ $('.filiereForm').submit(function(e){
     }
   );
 });
+
+$('.docForm').submit(function(e){
+  e.preventDefault();
+});

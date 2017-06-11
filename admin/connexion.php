@@ -28,7 +28,7 @@
     <div class="row principale">
 
       <div class="col m6 offset-m3 university zone">
-        <div class="col m12 titlearea"><i class="material-icons left">book</i>Université</div>
+        <div class="col m12 titlearea"><i class="material-icons left">book</i>Université / Institut</div>
         <div class="col m12 loader" style="display: none;"><center><img src="../fonts/soon.gif" /></center></div>
         <form class="univForm col m12">
           <div class="input-field col m12">
@@ -74,10 +74,14 @@
               <input class="file-path validate" type="text">
             </div>
           </div>
-          <div class="input-field col m12">
+          <div class="input-field col m6">
+            <input type="text" class="themeD">
+            <label for="themeD ">Titre du document</label>
+          </div>
+          <!--div class="input-field col m6">
             <input type="text" class="themeD">
             <label for="themeD ">Theme du document</label>
-          </div>
+          </div-->
           <div class="input-field col m12">
             <select class="typeD">
               <option>MEMOIRE</option>
@@ -91,14 +95,18 @@
           </div>
           <div class="col m6 input-field">
             <input type="text" class="mailD" />
-            <label for="mailD"></label>
+            <label for="mailD">Mail de l'auteur</label>
+          </div>
+          <div class="col m6 input-field">
+            <input type="text" class="contactD" />
+            <label for="contactD">Telephone de l'auteur (+226 7x xx xx xx)</label>
           </div>
           <div class="input-field col m12">
             <input type="text" class="anneeD" />
             <label for="anneeD">Année de publication</label>
           </div>
           <div class="input-field col m12">
-            <font class="col m5">Université : </font>
+            <font class="col m5">Université / institut : </font>
             <select class="univD">
               <?php
                 $r=$bdd->query('SELECT id, code FROM universite');
