@@ -29,6 +29,7 @@
 
       <div class="col m6 offset-m3 university zone">
         <div class="col m12 titlearea"><i class="material-icons left">book</i>Université</div>
+        <div class="col m12 loader" style="display: none;"><center><img src="../fonts/soon.gif" /></center></div>
         <form class="univForm col m12">
           <div class="input-field col m12">
             <input type="text" class="nomU">
@@ -49,11 +50,11 @@
         <form class="filiereForm col m12">
           <div class="input-field col m12">
             <input type="text" class="nomF">
-            <label for="nomF">Nom de l'université</label>
+            <label for="nomF">Nom de la filière</label>
           </div>
           <div class="input-field col m12">
             <input type="text" class="codeF">
-            <label for="codeF">Code de l'université</label>
+            <label for="codeF">Code de lq filière</label>
           </div>
           <div class="col m12">
             <center><button type="submit" class="btn waves-effect waves-light grey darken-4">Valider</button></center>
@@ -86,7 +87,11 @@
           </div>
           <div class="input-field col m12">
             <input type="text" class="auteurD">
-            <label for="auteurD">Auteur du document</label>
+            <label for="auteurD">Nom Prenom de l'Auteur du document</label>
+          </div>
+          <div class="col m6 input-field">
+            <input type="text" class="mailD" />
+            <label for="mailD"></label>
           </div>
           <div class="input-field col m12">
             <input type="text" class="anneeD" />

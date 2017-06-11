@@ -13,5 +13,29 @@ $('.btnAddFil').click(function(){
 $('select').material_select();
 $('.uninvForm').submit(function(e){
   e.preventDefault();
-  
+  $('.loader').css('display', 'block');
+  $.post(
+    '../php/manager.php',
+    {
+      opt: 'univ',
+      nom: $('.nomU').val(),
+      code: $('.codeU').val()
+    },function(data){
+      alert(data);
+    }
+  );
+});
+$('.filiereForm').submit(function(e){
+  e.preventDefault();
+  $('.loader').css('display', 'block');
+  $.post(
+    '../php/manager.php',
+    {
+      opt: 'filiere',
+      nom: $('.nomF').val(),
+      code: $('.codeF').val()
+    },function(data){
+      alert(data);
+    }
+  );
 });
