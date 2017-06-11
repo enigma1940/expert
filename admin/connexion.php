@@ -64,6 +64,15 @@
       <div class="col m6 offset-m3 document zone">
         <div class="col m12 titlearea"><i class="material-icons left">description</i>Document</div>
         <form class="col m12 docForm">
+          <div class="file-field input-field col m12">
+            <div class="btn">
+              <span>Choisir le document</span>
+              <input type="file" class="imgD" />
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+          </div>
           <div class="input-field col m12">
             <input type="text" class="themeD">
             <label for="themeD ">Theme du document</label>

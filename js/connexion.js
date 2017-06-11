@@ -11,3 +11,7 @@ $('.btnAddFil').click(function(){
   $('.filiere').toggle('drop');
 });
 $('select').material_select();
+$('.uninvForm').submit(function(e){
+  e.preventDefault();
+  
+});
