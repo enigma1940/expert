@@ -1,5 +1,5 @@
 <?php
-  class User{
+  class Admin{
     private $id, $nom, $prenom, $uname, $password, $email, $contact, $lastlogin;
 
     public function getId(){return $this->id;}
@@ -34,15 +34,13 @@
   	}
 
     public function auth($bdd){
-      $req=$bdd->prepare('SELECT COUNT(*) as n FROM user WHERE uname=? AND password=?');
-      $req->execute(array($this->getUname(), $this->getPassword()));
-      $d=$req->fetch();
-      if($d['n']==1){$r2=$bdd->prepare('SELECT ID FROM user WHERE uname=? AND password=?');
-        $r2->execute(array($this->getUname(), $this->getPassword()));
-        $d2=$r2->fetch();
-        $this->setId($d2['ID']);
-        return 1;}
-      else{return 0;}
+      $r=$bdd->prepare('SELECT id FROM admin WHERE username=? AND password=?');
+      $r->execute(array($this->getUname(), $this->getPassword()));
+      if($r->rowCount()==1){
+        $d=$r->fetch();
+        $this->setId($d['id']);
+        return 1;
+      }else{return 0;}
     }
 
     public function read($bdd){
