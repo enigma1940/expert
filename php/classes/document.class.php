@@ -31,7 +31,7 @@
   	}
 
     public function create($bdd){
-      $req=$bdd->prepare('INSERT INTO document(theme, type, auteur, annee, universite_id, filiere_id, admin_id) VALUES(:theme, :type, :auteur, :annee, :universite_id, :filiere_id, :admin_id)');
+      $req=$bdd->prepare('INSERT INTO document(theme, type, auteur, annee, filiere_id, universite_id, admin_id) VALUES(:theme, :type, :auteur, :annee, :filiere_id, :universite_id, :admin_id)');
       $req->execute(array(
         ':theme'=>$this->getTheme(),
         ':type'=>$this->getType(),

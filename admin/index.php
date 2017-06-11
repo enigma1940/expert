@@ -12,7 +12,25 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   </head>
   <body>
-    
+    <header class="row">
+
+    </header>
+    <div class="col m4 offset-m4">
+      <form class="col m12 connForm">
+        <div class="input-field col m12">
+          <input type="text" class="userName" />
+          <label for="userName">Identifient</label>
+        </div>
+        <div class="input-field col m12">
+          <input type="password" class="userPass" />
+          <label for="userPass">Mot de passe</label>
+        </div>
+        <div class="col m12 connErr"></div>
+        <div class="col m12">
+          <center><button type="submit" class="btn waves-effect waves-light">Connexion</button></center>
+        </div>
+      </form>
+    </div>
 
     <script type="text/javascript" src="../js/admin.js"></script>
   </body>
