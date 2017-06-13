@@ -32,7 +32,17 @@
   	}
 
     public function create($bdd){
-    //  $req=$bdd->prepare('INSERT INTO link(nomAuteur, annee, univ_id, filiere_id, admin_id, theme, mailAuteur, contactAuteur)');
+      $req=$bdd->prepare('INSERT INTO link(nomAuteur, annee, univ_id, filiere_id, admin_id, theme, mailAuteur, contactAuteur) VALUES(:nomAuteur, :annee, :univ_id, :filiere_id, :admin_id, :theme, :mailAuteur, :contactAuteur)');
+      $req->execute(array(
+        ':nomAuteur'=>$this->getNomAuteur(),
+        ':annee'=>$this->getAnnee(),
+        ':univ_id'=>$this->getUniv_id(),
+        ':filiere_id'=>$this->getFiliere_id(),
+        ':admin_id'=>$this->getAdmin_id(),
+        ':theme'=>$this->getTheme(),
+        ':mailAuteur'=>$this->getMailAuteur(),
+        ':contactAuteur'=>$this->getContactAuteur()
+      ));
     }
 
     public function read($bdd){

@@ -16,7 +16,7 @@
       <div class="col m1"></div>
     </header>
     <div class="row principal">
-      <div class="col m4 offset-m4">
+      <div class="col m4 offset-m4" style="border: solid 2px #333; border-radius: 20px;">
         <div class="col m12 titlearea">Connexion</div>
         <form class="col m12 connForm">
           <div class="input-field col m12">
@@ -29,7 +29,7 @@
           </div>
           <div class="col m12 connErr">Informations incorrectes</div>
           <div class="col m12">
-            <center><button type="submit" class="btn waves-effect waves-light">Connexion</button></center>
+            <center><button type="submit" class="btn grey darken-4 waves-effect waves-light">Connexion</button></center>
           </div>
         </form>
       </div>

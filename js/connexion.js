@@ -13,39 +13,41 @@ $('.btnAddFil').click(function(){
 $('select').material_select();
 $('.uninvForm').submit(function(e){
   e.preventDefault();
-  $('.errU').css('display', 'none');
+  /*$('.errU').css('display', 'none');
   $('.loader').css('display', 'block');
   if($('.nomU').val()!='' && $('.codeU')!=''){
-    $.post(
-      '../php/manager.php',
-      {
-        opt: 'univ',
-        nom: $('.nomU').val(),
-        code: $('.codeU').val()
-      },function(data){
-        alert(data);
-      }
-    );
+
     $(this)[0].reset();
-  }else{$('.errU').toggle('bounce');}
+  }else{$('.errU').toggle('bounce');}*/
+  $.post(
+    '../php/manager.php',
+    {
+      opt: 'univ',
+      nom: $('.nomU').val(),
+      code: $('.codeU').val()
+    },function(data){
+      alert(data);
+    }
+  );
 });
 $('.filiereForm').submit(function(e){
   e.preventDefault();
-  $('.loader').css('display', 'block');
+  /*$('.loader').css('display', 'block');
   $('.errF').css('display', 'none');
   if($('.nomF').val()!='' && $('.codeF').val()!=''){
-    $.post(
-      '../php/manager.php',
-      {
-        opt: 'filiere',
-        nom: $('.nomF').val(),
-        code: $('.codeF').val()
-      },function(data){
-        alert(data);
-      }
-    );
+
     $(this)[0].reset();
-  }else{$('.errF').toggle('bounce');}
+  }else{$('.errF').toggle('bounce');}*/
+  $.post(
+    '../php/manager.php',
+    {
+      opt: 'filiere',
+      nom: $('.nomF').val(),
+      code: $('.codeF').val()
+    },function(data){
+      alert(data);
+    }
+  );
 });
 
 $('.docForm').submit(function(e){
@@ -82,6 +84,18 @@ $('.btnAddLink').click(function(){
 
 $('.refForm').submit(function(e){
   e.preventDefault();
-
-  
+  $.post(
+    '../php/manager.php',
+    {
+      opt: 'annuaire',
+      nom: $('.nomR').val(),
+      annee: $('.anneeR').val(),
+      mail: $('.mailR').val(),
+      contact: $('.contactR').val(),
+      filiere: $('.filR option:selected').attr('value'),
+      univ: $('.univR option:selected').attr('value'),
+      theme: $('.titleR').val()
+    },function(data){alert(data);}
+  );
+  $('.refForm')[0].reset();
 });

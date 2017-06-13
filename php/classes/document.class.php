@@ -43,7 +43,7 @@
         ':type'=>$this->getType(),
         ':auteur'=>$this->getAuteur(),
         ':annee'=>$this->getAnnee(),
-        ':universite_id'=>$this->getUniiversite_id(),
+        ':universite_id'=>$this->getUniversite_id(),
         ':filiere_id'=>$this->getFiliere_id(),
         ':admin_id'=>$this->getAdmin_id(),
         ':contenu'=>$this->getContenu(),

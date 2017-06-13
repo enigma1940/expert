@@ -20,7 +20,8 @@
   </head>
   <body>
     <header class="row menu grey darken-4">
-      <div class="col m2 offset-m4 waves-effect waves-light itemMenu btnAddLink"><i class="material-icons left">link</i>Ajouter une référence</div>
+      <div class="col m2 itemMenu">ADMIN</div>
+      <div class="col m2 offset-m2 waves-effect waves-light itemMenu btnAddLink"><i class="material-icons left">link</i>Ajouter une référence</div>
       <div class="col m2 waves-effect waves-light itemMenu btnAddDoc"><i class="material-icons left">description</i>Ajouter un document</div>
       <div class="col m2 waves-effect waves-light itemMenu btnAddUn"><i class="material-icons left">book</i>Ajouter une université</div>
       <div class="col m2 waves-effect waves-light itemMenu btnAddFil"><i class="material-icons left">add</i>Ajouter une filière</div>
@@ -138,18 +139,22 @@
       </div>
 
       <div class="col m6 offset-m3 link zone">
-        <div class="col m12 titlearea grey darken-4"><i class="material-icons left">link</i>Référence</div>
+        <div class="col m12 titlearea"><i class="material-icons left">link</i>Référence</div>
         <form class="refForm col m12">
-          <div class="input-field col m12">
+          <div class="input-field col m8">
             <input type="text" class="nomR" />
             <label for="nomR">Nom et prénom(s) de l'auteur</label>
+          </div>
+          <div class="col m4 input-field">
+            <input type="number" class="anneeR" />
+            <label for="anneeR">Année : (ex : 2002)</label>
           </div>
           <div class="input-field col m6">
             <input type="email" class="mailR">
             <label for="mailR">Adresse Email</label>
           </div>
           <div class="input-field col m6">
-            <input type="text" class="contactR">
+            <input type="text" class="contactR" />
             <label for="contactR">Téléphone auteur (+226 70 xx ..)</label>
           </div>
           <div class="col m12 input-field">
@@ -161,7 +166,7 @@
             <select class="col m8 filR">
               <?php
                 $r=$bdd->query('SELECT * FROM filiere');
-                while($data=$r->fetch){
+                while($data=$r->fetch()){
                   echo '<option value="'.$data['id'].'">'.$data['code'].'</option>';
                 }
               ?>
@@ -172,14 +177,14 @@
             <select class="col m8 univR">
               <?php
                 $r=$bdd->query('SELECT * FROM universite');
-                while($data=$r->fetch){
-                  echo '<option value="'.$data['id']'">'.$data['code'].'</option>';
+                while($data=$r->fetch()){
+                  echo '<option value="'.$data['id'].'">'.$data['code'].'</option>';
                 }
               ?>
             </select>
           </div>
           <div class="col m12">
-            <center><button type="button" class="btn grey darken-4"></button></center>
+            <center><button type="sumbmit" class="btn grey darken-4 waves-effect waves-light">Valider</button></center>
           </div>
         </form>
       </div>

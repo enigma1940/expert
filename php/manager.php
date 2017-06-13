@@ -24,7 +24,7 @@ switch (htmlspecialchars($_POST['opt'])) {
       $path = pathinfo($_FILES['file']['name']);
       $ext = $path['extension'];
       move_uploaded_file($_FILES['file']['tmp_name'], '../files/'.htmlspecialchars($_POST['type']).'/'.md5($_FILES['file']['name']).'.'.$ext);
-
+      session_start();
       $doc = new Document();
       $doc->setTheme(htmlspecialchars($_POST['theme']));
       $doc->setType(htmlspecialchars($_POST['type']));
@@ -39,8 +39,19 @@ switch (htmlspecialchars($_POST['opt'])) {
       $doc->create($bdd);
     break;
 
-  case 'annuaire'
-      
+  case 'annuaire':
+      session_start();
+      print_r($_POST);
+      $link = new Link();
+      $link->setTheme(htmlspecialchars($_POST['theme']));
+      $link->setNomAuteur(htmlspecialchars($_POST['nom']));
+      $link->setAnnee(htmlspecialchars($_POST['annee']));
+      $link->setUniv_id(htmlspecialchars($_POST['univ']));
+      $link->setFiliere_id(htmlspecialchars($_POST['filiere']));
+      $link->setAdmin_id(htmlspecialchars($_SESSION['uid']));
+      $link->setMailAuteur(htmlspecialchars($_POST['mail']));
+      $link->setConactAuteur(htmlspecialchars($_POST['contact']));
+      $link->create($bdd);
     break;
 
 }

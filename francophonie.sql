@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2017 at 10:29 AM
+-- Generation Time: Jun 13, 2017 at 06:29 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -76,6 +76,39 @@ CREATE TABLE IF NOT EXISTS `filiere` (
   `nom` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `filiere`
+--
+
+INSERT INTO `filiere` (`id`, `code`, `nom`) VALUES
+(1, 'IT', 'Technologie de genie logiciel'),
+(2, 'ELN', 'Technologie de reseaux et systeme');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `link`
+--
+
+CREATE TABLE IF NOT EXISTS `link` (
+  `id` int(11) NOT NULL,
+  `nomAuteur` varchar(255) NOT NULL,
+  `annee` int(11) NOT NULL,
+  `univ_id` int(11) NOT NULL,
+  `filiere_id` int(11) NOT NULL,
+  `admin_id` int(11) NOT NULL,
+  `theme` varchar(255) NOT NULL,
+  `mailAuteur` varchar(60) NOT NULL,
+  `contactAuteur` varchar(40) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `link`
+--
+
+INSERT INTO `link` (`id`, `nomAuteur`, `annee`, `univ_id`, `filiere_id`, `admin_id`, `theme`, `mailAuteur`, `contactAuteur`) VALUES
+(2, 'sawadogo samuel', 2005, 2, 2, 1, 'Creation d''une friction', 'sam.corp@outlook.com', '72893659');
+
 -- --------------------------------------------------------
 
 --
@@ -87,6 +120,14 @@ CREATE TABLE IF NOT EXISTS `universite` (
   `code` varchar(45) DEFAULT NULL,
   `nom` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `universite`
+--
+
+INSERT INTO `universite` (`id`, `code`, `nom`) VALUES
+(1, 'UO', 'Universite de Ouagadougou'),
+(2, 'UPB', 'Universite Polytechnique de Bobo');
 
 --
 -- Indexes for dumped tables
@@ -111,11 +152,26 @@ ALTER TABLE `filiere`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `link`
+--
+ALTER TABLE `link`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `universite`
 --
 ALTER TABLE `universite`
   ADD PRIMARY KEY (`id`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `link`
+--
+ALTER TABLE `link`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
