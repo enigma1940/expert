@@ -7,7 +7,7 @@ spl_autoload_register('chargerClasse') ;
 
 switch (htmlspecialchars($_POST['opt'])) {
   case 'univ':
-      $univ = new University();
+      $univ = new Universite();
       $univ->setNom(htmlspecialchars($_POST['nom']));
       $univ->setCode(htmlspecialchars($_POST['code']));
       $univ->create($bdd);
@@ -23,7 +23,7 @@ switch (htmlspecialchars($_POST['opt'])) {
   case 'document':
       $path = pathinfo($_FILES['file']['name']);
       $ext = $path['extension'];
-      move_uploaded_file($_FILES['file']['tmp_name'], '../files/'.htmlspecialchars($_POST['type']).'/'.md5($_FILES['file']['name']).'.'.$ext);
+      move_uploaded_file($_FILES['file']['tmp_name'], '../files/'.htmlspecialchars($_POST['type']).'/'.str_replace(' ', '_',$_FILES['file']['name']));
       session_start();
       $doc = new Document();
       $doc->setTheme(htmlspecialchars($_POST['theme']));
@@ -33,7 +33,7 @@ switch (htmlspecialchars($_POST['opt'])) {
       $doc->setUniversite_id(htmlspecialchars($_POST['universite']));
       $doc->setFiliere_id(htmlspecialchars($_POST['filiere']));
       $doc->setAdmin_id($_SESSION['uid']);
-      $doc->setContenu('../files/'.htmlspecialchars($_POST['type']).'/'.md5($_FILES['file']['name']).'.'.$ext);
+      $doc->setContenu('../files/'.htmlspecialchars($_POST['type']).'/'.str_replace(' ', '_',$_FILES['file']['name']));
       $doc->setMailAuteur(htmlspecialchars($_POST['mail']));
       $doc->setConactAuteur(htmlspecialchars($_POST['contact']));
       $doc->create($bdd);

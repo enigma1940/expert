@@ -20,7 +20,7 @@
   	}
 
     public function create($bdd){
-      $req=$bdd->prepare('INSERT INTO universite(code, nom) VALUES(:code, :nom)');
+      $req=$bdd->prepare('INSERT INTO filiere(code, nom) VALUES(:code, :nom)');
       $req->execute(array(
         ':code'=>$this->getCode(),
         ':nom'=>$this->getNom()

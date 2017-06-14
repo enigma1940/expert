@@ -11,33 +11,29 @@ $('.btnAddFil').click(function(){
   $('.filiere').toggle('drop');
 });
 $('select').material_select();
-$('.uninvForm').submit(function(e){
+$('.univForm').submit(function(e){
   e.preventDefault();
-  /*$('.errU').css('display', 'none');
+  $('.errU').css('display', 'none');
   $('.loader').css('display', 'block');
   if($('.nomU').val()!='' && $('.codeU')!=''){
-
-    $(this)[0].reset();
-  }else{$('.errU').toggle('bounce');}*/
   $.post(
     '../php/manager.php',
     {
       opt: 'univ',
       nom: $('.nomU').val(),
       code: $('.codeU').val()
-    },function(data){
-      alert(data);
-    }
+    },function(data){}
   );
+    $('.loader').css('display', 'none');
+    $(this)[0].reset();
+  }else{$('.loader').css('display', 'none'); $('.errU').toggle('bounce');}
+
 });
 $('.filiereForm').submit(function(e){
   e.preventDefault();
-  /*$('.loader').css('display', 'block');
+  $('.loader').css('display', 'block');
   $('.errF').css('display', 'none');
   if($('.nomF').val()!='' && $('.codeF').val()!=''){
-
-    $(this)[0].reset();
-  }else{$('.errF').toggle('bounce');}*/
   $.post(
     '../php/manager.php',
     {
@@ -45,9 +41,9 @@ $('.filiereForm').submit(function(e){
       nom: $('.nomF').val(),
       code: $('.codeF').val()
     },function(data){
-      alert(data);
-    }
-  );
+    });
+    $(this)[0].reset();
+  }else{$('.errF').toggle('bounce');}
 });
 
 $('.docForm').submit(function(e){
@@ -60,9 +56,9 @@ $('.docForm').submit(function(e){
   formData.append('mail', $('.mailD').val());
   formData.append('auteur', $('.auteurD').val());
   formData.append('contact', $('.contactD').val());
-  formData.append('annee', $('.annee').val());
-  formData.append('universite', $('.univD option:selected').attr('val'));
-  formData.append('filiere', $('.filiereD option:selected').text());
+  formData.append('annee', $('.anneeD').val());
+  formData.append('universite', $('.univD option:selected').attr('value'));
+  formData.append('filiere', $('.filiereD option:selected').attr('value'));
   $.ajax({
     type:'POST',
     url:'../php/manager.php',
@@ -71,7 +67,6 @@ $('.docForm').submit(function(e){
       contentType: false,
       processData: false,
       success:function(data){
-          alert(data);
           $('.docForm')[0].reset();
       }
   });
