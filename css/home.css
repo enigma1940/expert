@@ -1,0 +1,4 @@
+.item, .title{text-align: center;}
+.item{border: none; border-radius: 10px;  font-size: 16px;}
+.title{font-size: 25px;}
+header{border-bottom: solid 2px #fc0; /*position: fixed;*/ top:0; width: 100%; z-index: 20;}
