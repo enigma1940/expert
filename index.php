@@ -70,13 +70,13 @@
         <?php
           $r=$bdd->query('SELECT id ,code, nom FROM filiere');
           while($d=$r->fetch()){
-            echo '<div class="col m2">
+            echo '<div class="col m2 rubrique">
               <div class="col m12">'.$d['code'].'</div>
               <div class="col m12">'.$d['nom'].'</div>';
               $r0 =$bdd->prepare('SELECT count(*) as n FROM document WHERE filiere_id=?');
               $r0->execute(array($d['id']));
               $d0=$r0->fetch();
-              echo '<div class="col m12">'.$d0['n'].' items</div>';
+              echo '<div class="col m12"><font class="right ctItem">'.$d0['n'].' items</font></div>';
             echo '</div>';
           }
         ?>
