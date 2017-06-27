@@ -113,7 +113,7 @@
         <div class="col m3">
           <div class="col m12 filItem">
             <div class="col m12"><center><img src="images/domain/gestion.png" /></center></div>
-            <div class="col m12 rname">Gestion</div>
+            <div class="col m12 rname">Finance Comptabilité</div>
           </div>
         </div>
 
