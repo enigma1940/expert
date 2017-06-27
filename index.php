@@ -68,7 +68,7 @@
 
       <div class="col m12 rubriqueArea">
         <?php
-          $r=$bdd->query('SELECT id ,code, nom FROM filiere');
+        /*  $r=$bdd->query('SELECT id ,code, nom FROM filiere');
           while($d=$r->fetch()){
             echo '<div class="col m2 rubrique">
               <div class="col m12">'.$d['code'].'</div>
@@ -78,8 +78,46 @@
               $d0=$r0->fetch();
               echo '<div class="col m12"><font class="right ctItem">'.$d0['n'].' items</font></div>';
             echo '</div>';
-          }
+          } */
         ?>
+        <div class="col m3">
+          <div class="col m12 filItem">
+            <div class="col m12"><center><img src="images/domain/agri.png" /></center></div>
+            <div class="col m12 rname">Agriculture</div>
+          </div>
+        </div>
+        <div class="col m3">
+          <div class="col m12 filItem">
+            <div class="col m12"><center><img src="images/domain/Logistique.png" /></center></div>
+            <div class="col m12 rname">Logistique</div>
+          </div>
+        </div>
+        <div class="col m3">
+          <div class="col m12 filItem">
+            <div class="col m12"><center><img src="images/domain/management.png" /></center></div>
+            <div class="col m12 rname">Management</div>
+          </div>
+        </div>
+        <div class="col m3">
+          <div class="col m12 filItem">
+            <div class="col m12"><center><img src="images/domain/it.png" /></center></div>
+            <div class="col m12 rname">IT</div>
+          </div>
+        </div>
+        <div class="col m3">
+          <div class="col m12 filItem">
+            <div class="col m12"><center><img src="images/domain/economy.png" /></center></div>
+            <div class="col m12 rname">Economie</div>
+          </div>
+        </div>
+        <div class="col m3">
+          <div class="col m12 filItem">
+            <div class="col m12"><center><img src="images/domain/gestion.png" /></center></div>
+            <div class="col m12 rname">Gestion</div>
+          </div>
+        </div>
+
+
       </div>
 
 

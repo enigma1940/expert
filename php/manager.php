@@ -12,14 +12,12 @@ switch (htmlspecialchars($_POST['opt'])) {
       $univ->setCode(htmlspecialchars($_POST['code']));
       $univ->create($bdd);
     break;
-
   case 'filiere':
       $fil = new Filiere();
       $fil->setNom(htmlspecialchars($_POST['nom']));
       $fil->setCode(htmlspecialchars($_POST['code']));
       $fil->create($bdd);
     break;
-
   case 'document':
       $path = pathinfo($_FILES['file']['name']);
       $ext = $path['extension'];
@@ -38,7 +36,6 @@ switch (htmlspecialchars($_POST['opt'])) {
       $doc->setConactAuteur(htmlspecialchars($_POST['contact']));
       $doc->create($bdd);
     break;
-
   case 'annuaire':
       session_start();
       print_r($_POST);
@@ -53,7 +50,22 @@ switch (htmlspecialchars($_POST['opt'])) {
       $link->setConactAuteur(htmlspecialchars($_POST['contact']));
       $link->create($bdd);
     break;
-
+  case 'deluniv':
+      $req=$bdd->prepare('DELETE FROM universite WHERE id=?');
+      $req->execute(array(htmlspecialchars($_POST['id'])));
+    break;
+  case 'delfil':
+      $req=$bdd->prepare('DELETE FROM filiere WHERE id=?');
+      $req->execute(array(htmlspecialchars($_POST['id'])));
+    break;
+  case 'deldoc':
+      $req=$bdd->prepare('DELETE FROM document WHERE id=?');
+      $req->execute(array(htmlspecialchars($_POST['id'])));
+    break;
+  case 'delref':
+      $req=$bdd->prepare('DELETE FROM link WHERE id=?');
+      $req->execute(array(htmlspecialchars($_POST['id'])));
+    break;
 }
 
 

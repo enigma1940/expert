@@ -94,3 +94,26 @@ $('.refForm').submit(function(e){
   );
   $('.refForm')[0].reset();
 });
+$('.btnDel').click(function(){
+  $('.delMenu').toggle('drop');
+});
+$('.btnUniv').click(function(){
+  $('.zone').hide();
+  $('.delMenu').hide();
+  $('.delUniv').toggle('bounce');
+});
+$('.btnFil').click(function(){
+  $('.zone').hide();
+  $('.delMenu').hide();
+  $('.delFil').toggle('bounce');
+});
+$('.btnRef').click(function(){
+  $('.zone').hide();
+  $('.delMenu').hide();
+  $('.delRef').toggle('bounce');
+});
+$('.btnDoc').click(function(){
+  $('.zone').hide();
+  $('.delMenu').hide();
+  $('.delDoc').toggle('bounce');
+});

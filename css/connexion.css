@@ -2,3 +2,5 @@
 .titlearea{font-size: 25px; text-align: center;}
 .zone{display: none; border: solid 2px #333; border-radius: 25px;}
 .errF, .errU{font-size: 16px; color: rgb(149, 0, 18); display: none;}
+.delMenu div{line-height: 40px; color: white; text-align: center;}
+.delMenu{display: none;}
